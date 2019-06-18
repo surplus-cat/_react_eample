@@ -46,8 +46,6 @@ class router extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(initRouters)
-    
     initRouters.forEach(item => {
       this.deepAdminChildren(item, this.props);
     })
@@ -136,7 +134,7 @@ const Authverify = withRouter(props => {
 const mapState = state => {
   return {
     isLogin: state.verifyUser.isLogin,
-    loading: state.loading.show
+    loading: state.loading.isShow
   }
 }
 

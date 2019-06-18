@@ -261,8 +261,7 @@ let App = (props) => {
     <div className={styles.admin}>
       <div
         className={styles['left-menu']}
-        style={{ width: collapsed ? '80px' : '200px' }}
-      >
+        style={{ width: collapsed ? '80px' : '200px' }}>
         <a className={styles.github} href="https://github.com/treasureDouDou">
           <svg
             aria-hidden="true"

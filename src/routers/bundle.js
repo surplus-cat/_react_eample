@@ -48,7 +48,7 @@ class Bundle extends React.Component {
   }
 
   render () {
-    return this.state.mod ? this.props.dispatch(this.state.mod) : null;
+    return this.state.mod ? this.props.children(this.state.mod) : null;
   }
 
 }
