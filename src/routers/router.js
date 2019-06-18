@@ -57,6 +57,7 @@ class router extends React.Component {
 
   // 找到admin下的菜单，便于404功能
   deepAdminChildren(item) {
+    console.log(item);
     if (!item.children && item.component) {
       this.adminChildren.push(item)
     } else {

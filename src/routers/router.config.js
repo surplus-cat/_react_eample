@@ -65,6 +65,7 @@ const mapRouters = item => {
       )
     }
   }
+  return item;
 }
 
 const initRouters = routers.map(item => {
