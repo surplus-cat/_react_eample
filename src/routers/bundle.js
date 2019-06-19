@@ -1,5 +1,5 @@
 import React from 'react'
-import { loading } from '../actions/rootActions'
+import { isloading } from '../actions/rootActions'
 import { connect } from 'react-redux'
 
 class Bundle extends React.Component {
@@ -14,7 +14,7 @@ class Bundle extends React.Component {
   unmount = false;
 
   componentWillMount = () => {
-    this.props.dispatch((loading(true)))
+    this.props.dispatch((isloading(true)))
     this.load(this.props)
   }
 
@@ -36,13 +36,13 @@ class Bundle extends React.Component {
     //注意这里，使用Promise对象; mod.default导出默认
     props.load().then((mod) => {
       if (this.unmount) {
-        this.props.dispatch(loading(true));
+        this.props.dispatch(isloading(true));
         return false;
       }
       this.setState({
         mod: mod.default ? mod.default : mod
       }, () => {
-        this.props.dispatch(loading(false))
+        this.props.dispatch(isloading(false))
       })
     })
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox, message } from 'antd'
-import { verifyLogin, loading } from '../../actions/rootActions'
+import { verifyLogin, isloading } from '../../actions/rootActions'
 import styles from './login.less'
 import { connect } from 'react-redux'
 const FormItem = Form.Item
@@ -13,7 +13,7 @@ class NormalLoginForm extends Component {
           message.error('密码不正确');
           return false
         }
-        this.props.dispatch(loading(true))
+        this.props.dispatch(isloading(true))
         this.props.dispatch(
           verifyLogin({
             isLogin: true,

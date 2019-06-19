@@ -28,7 +28,7 @@ class Dialog extends React.Component {
     }
 
     return (
-      <>
+      <div>
         <Modal
           okText="确认"
           cancelText="取消"
@@ -69,7 +69,7 @@ class Dialog extends React.Component {
             }
           </FormItem>
         </Modal>
-      </>
+      </div>
     )
   }
 }

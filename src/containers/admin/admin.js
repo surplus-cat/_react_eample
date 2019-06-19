@@ -89,10 +89,10 @@ let App = (props) => {
   React.useEffect((props) => {
     initShowMenu(props.location.pathname)
     getBreadcrumb(props.location.pathname)
-    return () => {
+    // return () => {
 
-    };
-  }, [props])
+    // };
+  })
 
 
   // 找到这个菜单属于哪个位置

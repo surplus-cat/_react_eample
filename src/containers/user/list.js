@@ -62,7 +62,7 @@ export default function () {
   }
 
   return (
-    <>
+    <div>
       <Row gutter={16}>
         <Col span={4}>
           <Search
@@ -94,6 +94,6 @@ export default function () {
         visible={visible}
         handleCancel={handleCancel}
         handleOk={handleOk}/>
-    </>
+    </div>
   )
 }

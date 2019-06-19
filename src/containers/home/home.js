@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Row, Col, Icon, Timeline, Table } from 'antd'
 import styles from './home.less'
-import { loading } from '../../actions/rootActions'
+import { isloading } from '../../actions/rootActions'
 const { Column } = Table;
 const labelStyle = {
   fontSize: `10px`,

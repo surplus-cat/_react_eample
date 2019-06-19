@@ -7,7 +7,7 @@ function verifyLogin (user) {
   }
 }
 
-function loading (isShow) {
+function isloading (isShow) {
   return {
     type: LOADING,
     isShow
@@ -16,5 +16,5 @@ function loading (isShow) {
 
 export {
   verifyLogin,
-  loading
+  isloading
 }
