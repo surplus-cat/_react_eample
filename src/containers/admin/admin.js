@@ -11,7 +11,8 @@ import { initRouters } from '../../routers/router.config'
 const SubMenu = Menu.SubMenu
 
 let App = (props) => {
-  let rootSubmenuKeys = JSON.parse(JSON.stringify(initRouters));
+  console.log(props);   
+  let rootSubmenuKeys = initRouters.slice(0) // 数组的深拷贝方法 JSON.parse(JSON.stringify(initRouters));
 
   const [collapsed, setCollaped] = React.useState(false);
   const [openKeys, setOpenKeys] = React.useState([]);
@@ -86,13 +87,14 @@ let App = (props) => {
     }
   }
 
-  React.useEffect((props) => {
-    initShowMenu(props.location.pathname)
-    getBreadcrumb(props.location.pathname)
-    // return () => {
+  // React.useEffect((props) => {
+  //   console.log(props);
+  //   initShowMenu(props.location.pathname)
+  //   getBreadcrumb(props.location.pathname)
+  //   // return () => {
 
-    // };
-  })
+  //   // };
+  // }, props)
 
 
   // 找到这个菜单属于哪个位置

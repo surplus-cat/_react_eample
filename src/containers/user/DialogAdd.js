@@ -28,48 +28,46 @@ class Dialog extends React.Component {
     }
 
     return (
-      <div>
-        <Modal
-          okText="确认"
-          cancelText="取消"
-          title="新增"
-          visible={visible}
-          onCancel={handleCancel}
-          onOk={this.hanleOk}>
-          <FormItem {...formItemLayout} label="姓名">
-            {
-              getFieldDecorator('name', {
-                rules: [{
+      <Modal
+        okText="确认"
+        cancelText="取消"
+        title="新增"
+        visible={visible}
+        onCancel={handleCancel}
+        onOk={this.hanleOk}>
+        <FormItem {...formItemLayout} label="姓名">
+          {
+            getFieldDecorator('name', {
+              rules: [{
+                required: true,
+                message: '请输入姓名'
+              }]
+            })(<Input placeholder="请输入姓名" />)
+          }
+        </FormItem>
+        <FormItem {...formItemLayout} label="年龄">
+          {
+            getFieldDecorator('age', {
+              rules: [
+                {
                   required: true,
-                  message: '请输入姓名'
-                }]
-              })(<Input placeholder="请输入姓名" />)
-            }
-          </FormItem>
-          <FormItem {...formItemLayout} label="年龄">
-            {
-              getFieldDecorator('age', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入年龄'
-                  }
-                ]
-              })(<Input placeholder="请输入年龄" />)
-            }
-          </FormItem>
-          <FormItem {...formItemLayout} label="性别">
-            {
-              getFieldDecorator('sex')(
-                <RadioGroup>
-                  <Radio value="男">男</Radio>
-                  <Radio value="女">女</Radio>
-                </RadioGroup>
-              )
-            }
-          </FormItem>
-        </Modal>
-      </div>
+                  message: '请输入年龄'
+                }
+              ]
+            })(<Input placeholder="请输入年龄" />)
+          }
+        </FormItem>
+        <FormItem {...formItemLayout} label="性别">
+          {
+            getFieldDecorator('sex')(
+              <RadioGroup>
+                <Radio value="男">男</Radio>
+                <Radio value="女">女</Radio>
+              </RadioGroup>
+            )
+          }
+        </FormItem>
+      </Modal>
     )
   }
 }
