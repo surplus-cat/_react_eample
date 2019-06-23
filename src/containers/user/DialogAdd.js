@@ -5,10 +5,11 @@ const RadioGroup = Radio.Group
 
 class Dialog extends React.Component {
 
-  hanleOk = () => {
+  handleOk = () => {
     this.props.form.validateFields((err, value) => {
       if (!err) {
-        this.props.hanleOk(value)
+        console.log(value);
+        this.props.handleOk(value)
       }
     })
   }
@@ -21,7 +22,7 @@ class Dialog extends React.Component {
 
   render () {
     const { getFieldDecorator } = this.props.form;
-    const { visible, handleCancel } = this.props;
+    const { visible, handleCancel, handleOk } = this.props;
     const formItemLayout = {
       labelCol: { span:4 },
       wrapperCol: { span: 20 }
@@ -34,7 +35,7 @@ class Dialog extends React.Component {
         title="新增"
         visible={visible}
         onCancel={handleCancel}
-        onOk={this.hanleOk}>
+        onOk={handleOk}>
         <FormItem {...formItemLayout} label="姓名">
           {
             getFieldDecorator('name', {

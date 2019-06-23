@@ -33,12 +33,13 @@ export default function () {
     setName(e.target.value)
   }
 
+  // 用户列表过滤功能
   let filterHandler = _ => {
     if (!name || name === '0') {
       setFilterList(list);
       return false
     } else {
-      let _filterList = list.filter(el => el.name === name)
+      let _filterList = list.filter(el => el.name === name);
       setFilterList(_filterList);
     }
   }

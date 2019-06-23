@@ -11,7 +11,7 @@ import { initRouters } from '../../routers/router.config'
 const SubMenu = Menu.SubMenu
 
 let App = (props) => {
-  console.log(props);   
+  // console.log(props);
   let rootSubmenuKeys = initRouters.slice(0) // 数组的深拷贝方法 JSON.parse(JSON.stringify(initRouters));
 
   const [collapsed, setCollaped] = React.useState(false);
